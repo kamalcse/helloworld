@@ -6,7 +6,9 @@ $ git config [--global | --local | --system] --list
 $ git config --global core.editor Vim   //To select a different text editor, such as Vim
 $ Git config -global color.ui true    //to set these color themes
 
+$ git gui // to run the git gui 
 $ git clone <repository URL>  // to clone or load a repository in local foder
+
 
 -- Pull 
 $ git pull origin <branch_name>  // to pull files from repository
@@ -14,3 +16,17 @@ $ git pull origin  // if on the same branch then branch name not needed
 
 --Push
 $ git push origin [branch_name] 
+
+--Remote
+$ git remote  //To check the configuration of the remote server
+$ git remote [-v | --verbose]   //show the URLs that Git has stored as a short name
+$ git remote add <remote_short_name><remote URL>  //add a remote as a short name
+$ git remote rename <old name><new name>  // rename a remote short name
+$ git remote show <remote_short_name>  //show additional information about a particular remote
+$ git remote set-url <remote_short_name> <newURL>   //change the remote UR
+$ git pull <short name>  //we can use <short name> on the command line in place of the whole remote URL. git pull command automatically fetches and then merges the remote data into your current branch
+$ git fetch <remote_short_name>   //To fetch the data from your remote projects but not merge with existing files.
+$ git clone <remote_short_name>  //To clone the remote repository from your remote projects
+$ git push <remote_short_name><branch> //To update the main branch of the project - $ git push origin master 
+$ git remote [rm | remove] <destination>  //remove a remote connection from a repository
+
