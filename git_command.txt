@@ -6,27 +6,39 @@ $ git config [--global | --local | --system] --list
 $ git config --global core.editor Vim   //To select a different text editor, such as Vim
 $ Git config -global color.ui true    //to set these color themes
 
+-- Git Tools
 $ git gui // to run the git gui 
 $ gitk [git log options] // to run gitk tools
-$ git clone <repository URL>  // to clone or load a repository in local foder
 
--- Git create new repository
+-- Git create new repository and clone 
 $ git init [Demo]  //to create a local repository
+$ git clone <repository URL>  // to clone or Make a local copy of the server repository.
 
 --Add a change to staging area
 $ git add [Filename | .]  //add file(s)
-$ git status // show the change lists
+$ git add*
+
+--Track changes
+$ git diff  //Track the changes that have not been staged
+$ git diff --staged  //Track the changes that have staged but not committed
+$ git diff HEAD  //Track the changes after committing a file
+$ git diff Git Diff Branches:  //Track the changes between two commits:
+$ git diff < branch 2>
+$ git status // Display the state of the working directory and the staging area.
+$ git show     //Shows objects
 
 --Commit a change
 $ git commit -m " Commit Message"
 $ git commit -a 
 
--- Pull 
-$ git pull origin <branch_name>  // to pull files from repository
-$ git pull origin  // if on the same branch then branch name not needed
-
 --Push
 $ git push origin [branch_name] 
+$ git push --all   //pushes all the branches to the server repository
+
+-- Pull 
+$ git pull URL
+$ git pull origin <branch_name>  // to pull files from repository
+$ git pull origin  // if on the same branch then branch name not needed
 
 --Remote
 $ git remote  //To check the configuration of the remote server
@@ -40,4 +52,21 @@ $ git fetch <remote_short_name>   //To fetch the data from your remote projects 
 $ git clone [remote_short_name | URL]  //To clone the remote repository from your remote projects
 $ git push <remote_short_name><branch> //To update the main branch of the project - $ git push origin master 
 $ git remote [rm | remove] <destination>  //remove a remote connection from a repository
+
+-- Branch Related
+$ git branch // lists all branches
+
+--Merge
+$ git merge <BranchName> //merge the specified branch's history into the current branch.
+
+--log
+$ git log   //check the commit history.
+$ git log -3  //to show only the last three entries.
+
+--Git alias
+--Set up an alias for each command:
+$ git config --global alias.co checkout
+$ git config --global alias.br branch
+$ git config --global alias.ci commit
+$ git config --global alias.st status
 
