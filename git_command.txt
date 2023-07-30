@@ -7,8 +7,19 @@ $ git config --global core.editor Vim   //To select a different text editor, suc
 $ Git config -global color.ui true    //to set these color themes
 
 $ git gui // to run the git gui 
+$ gitk [git log options] // to run gitk tools
 $ git clone <repository URL>  // to clone or load a repository in local foder
 
+-- Git create new repository
+$ git init [Demo]  //to create a local repository
+
+--Add a change to staging area
+$ git add [Filename | .]  //add file(s)
+$ git status // show the change lists
+
+--Commit a change
+$ git commit -m " Commit Message"
+$ git commit -a 
 
 -- Pull 
 $ git pull origin <branch_name>  // to pull files from repository
@@ -26,7 +37,7 @@ $ git remote show <remote_short_name>  //show additional information about a par
 $ git remote set-url <remote_short_name> <newURL>   //change the remote UR
 $ git pull <short name>  //we can use <short name> on the command line in place of the whole remote URL. git pull command automatically fetches and then merges the remote data into your current branch
 $ git fetch <remote_short_name>   //To fetch the data from your remote projects but not merge with existing files.
-$ git clone <remote_short_name>  //To clone the remote repository from your remote projects
+$ git clone [remote_short_name | URL]  //To clone the remote repository from your remote projects
 $ git push <remote_short_name><branch> //To update the main branch of the project - $ git push origin master 
 $ git remote [rm | remove] <destination>  //remove a remote connection from a repository
 
