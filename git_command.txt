@@ -54,14 +54,31 @@ $ git push <remote_short_name><branch> //To update the main branch of the projec
 $ git remote [rm | remove] <destination>  //remove a remote connection from a repository
 
 -- Branch Related
-$ git branch // lists all branches
+$ git branch // lists all branches 
+$ git branch --list
+$ git branch <branch name>  // create a branch
+$ git branch -d   //Delete a Branch:
+$ git push origin -delete   //Delete a remote Branch:
+$ git branch -m  //Rename Branch:
+$ git checkout <branch name> //Switch to a particular branch
+$ git checkout -b <branch name> //Create a new branch and switch to it
+$ git branch -r  //To see a list of all the remote branches available
+$ git checkout -t origin/feature-branch  ////Switch to a remote branch
 
 --Merge
 $ git merge <BranchName> //merge the specified branch's history into the current branch.
 
---log
-$ git log   //check the commit history.
+--log/Commit History
+$ git log   //Display the most recent commits and the status of the head
 $ git log -3  //to show only the last three entries.
+$ git log -oneline  //Display the output as one commit per line
+$ git log -stat  //Displays the files that have been modified
+$ git log -p  //Display the modified files with location
+$ git blame <file name>  //Display the modification on each line of a file
+
+--Ignoring files
+$ touch .gitignore //List the ignored files:
+$ git ls-files -i --exclude-standard
 
 --Git alias
 --Set up an alias for each command:
