@@ -1,1 +1,9 @@
+$ git clone <repository URL>  // to clone or load a repository in local foder
+
+-- Pull 
 $ git pull origin <branch_name>  // to pull files from repository
+$ git pull origin  // if on the same branch then branch name not needed
+
+--Push
+$ git push origin <branch_name> 
+$ git push origin
