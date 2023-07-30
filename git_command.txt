@@ -1,3 +1,11 @@
+-- Git Setup
+--The order of priority of the Git config is local, global, and system, respectively
+$ git config --global user.name "Kamal"
+$ git config --global user.email "kamal.cse.du@gmail.com"
+$ git config [--global | --local | --system] --list
+$ git config --global core.editor Vim   //To select a different text editor, such as Vim
+$ Git config -global color.ui true    //to set these color themes
+
 $ git clone <repository URL>  // to clone or load a repository in local foder
 
 -- Pull 
@@ -5,5 +13,4 @@ $ git pull origin <branch_name>  // to pull files from repository
 $ git pull origin  // if on the same branch then branch name not needed
 
 --Push
-$ git push origin <branch_name> 
-$ git push origin
+$ git push origin [branch_name] 
