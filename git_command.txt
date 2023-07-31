@@ -65,8 +65,30 @@ $ git checkout -b <branch name> //Create a new branch and switch to it
 $ git branch -r  //To see a list of all the remote branches available
 $ git checkout -t origin/feature-branch  ////Switch to a remote branch
 
+$ git stash  //Switch branches without committing the current branch
+$ git stash save ""  //Saving stashes with a message
+$ git stash list  //Check the stored stashes
+$ git stash apply  //Re-apply the changes that you just stashed
+$ git stash show   //Track the stashes and their changes
+$ git stash pop  //Re-apply the previous commits
+$ git stash drop  //Delete a most recent stash from the queue
+$ git stash clear  //Delete all the available stashes at once
+$ git stash branch  //Stash work on a separate branch
+
+$ git cherry-pick  //Apply the changes introduced by some existing commit
+
 --Merge
 $ git merge <BranchName> //merge the specified branch's history into the current branch.
+$ git merge --abort  // If you encounter conflicts during the merge and decide you want to abort the merge
+
+--Git rebase
+$ git rebase <branch>   //moves the changes from the current branch to the tip of <branch>.
+$ git rebase -i <commit>  //Interactive rebase allows you to interactively edit, reorder, squash, or drop commits from a branch. It opens a text editor that lists the commits to be rebased, and you can modify the list to perform various operations.
+$ git rebase --continue  //Continue the rebasing process
+$ git rebase --skip  //Abort the rebasing process
+$ git rebase --abort  //abandon the rebase during conflict and revert to the original state
+$ git pull --rebase  //This combines git fetch and git rebase,
+$ git branch --set-upstream-to=<remote>/<branch>  //working on a local branch and want to rebase it on top of a specific remote branch 
 
 --log/Commit History
 $ git log   //Display the most recent commits and the status of the head
