@@ -47,11 +47,13 @@ $ git remote add <remote_short_name><remote URL>  //add a remote as a short name
 $ git remote rename <old name><new name>  // rename a remote short name
 $ git remote show <remote_short_name>  //show additional information about a particular remote
 $ git remote set-url <remote_short_name> <newURL>   //change the remote UR
-$ git pull <short name>  //we can use <short name> on the command line in place of the whole remote URL. git pull command automatically fetches and then merges the remote data into your current branch
+$ git pull <short name>  //we can use <short name> on the command line in place of the whole remote URL. git pull command automatically fetches and then merges the remote data into your current branch - $ git pull origin master
 $ git fetch <remote_short_name>   //To fetch the data from your remote projects but not merge with existing files.
 $ git clone [remote_short_name | URL]  //To clone the remote repository from your remote projects
 $ git push <remote_short_name><branch> //To update the main branch of the project - $ git push origin master 
+$ git push -f  //Force push data:
 $ git remote [rm | remove] <destination>  //remove a remote connection from a repository
+$ git push origin -delete edited  //Delete a remote branch by push command
 
 -- Branch Related
 $ git branch // lists all branches 
