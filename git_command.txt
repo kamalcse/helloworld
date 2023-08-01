@@ -142,7 +142,14 @@ $ git revert --continue //resolving conflicts during a revert or after modifying
 $ git revert --abort //If you decide to cancel the revert process and return to the state before starting the revert, use this command to abort the revert.
 
 --Git reset
-$ git reset -hard
-$ git reset -soft:
-$ git reset --mixed
+$ git reset <commit> //moves the current branch and the branch's head to the specified <commit>
+$ git reset --hard <commit> //hard option moves the current branch to the specified <commit> and resets both the branch's head and the working directory to match the specified commit
+$ git reset -soft <commit>  //soft option moves the branch's head to the specified <commit> but leaves the working directory and staging area unchanged.
+$ git reset HEAD  //Without specifying a commit, git reset HEAD is used to unstage all changes in the staging area. This effectively moves all changes back to the working directory, but the commit history remains unchanged
+$ git reset --mixed  //mixed option is the default behavior and is similar to git reset HEAD. It moves the branch's head to the specified <commit> and unstages changes in the staging area, but it leaves the working directory unchange
 
+--Removing files
+$ git rm <file>  //This command removes a file from both the working directory and the Git repository
+$ git rm --cached <file> //Remove files from the Git repository But keep the files in your local repository
+$ git mv <old_file> <new_file> //This command is used to rename a file in the working directory and stage the change for the next commit. It is equivalent to using git rm on the old file and git add on the new file
+$ git mv old_filename.txt new_filename.txt   # Renames 'old_filename.txt' to 'new_filename.txt'
