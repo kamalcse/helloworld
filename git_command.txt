@@ -59,12 +59,22 @@ $ git remote rename <old name><new name>  // rename a remote short name
 $ git remote show <remote_short_name>  //show additional information about a particular remote
 $ git remote set-url <remote_short_name> <newURL>   //change the remote UR
 $ git pull <short name>  //we can use <short name> on the command line in place of the whole remote URL. git pull command automatically fetches and then merges the remote data into your current branch - $ git pull origin master
-$ git fetch <remote_short_name>   //To fetch the data from your remote projects but not merge with existing files.
 $ git clone [remote_short_name | URL]  //To clone the remote repository from your remote projects
 $ git push <remote_short_name><branch> //To update the main branch of the project - $ git push origin master 
 $ git push -f  //Force push data:
 $ git remote [rm | remove] <destination>  //remove a remote connection from a repository
 $ git push origin -delete edited  //Delete a remote branch by push command
+
+--Fetch
+$ git fetch< repository Url>  //Fetch the remote repository
+$ git fetch <remote_short_name>   //To fetch the data from your remote projects but not merge with existing files.
+$ git fetch origin  
+$ git fetch  //not automatically merge the changes into your current branch. After fetching, you can review the changes and decide whether to merge them using git merge or git rebase.
+$ git fetch --all //Fetch all the branches simultaneously
+$ git fetch --tags //fetches tags from the remote repository. This is useful if you want to get the latest tags from the remote without fetching all branches 
+$ git fetch --prune  // remove any remote branches that no longer exist on the remote repository
+$ git fetch --depth=<depth> //allows you to limit the amount of history fetched from the remote repository like -> git fetch --depth=1
+
 
 -- Branch Related
 $ git branch // lists all branches 
@@ -121,4 +131,18 @@ $ git config --global alias.co checkout
 $ git config --global alias.br branch
 $ git config --global alias.ci commit
 $ git config --global alias.st status
+
+--: Undo changes
+--Git revert
+$ git revert
+$ git revert <commit> //<commit> parameter can be a commit hash, a branch name, a tag, or a commit reference -> $git revert abcdef
+$ git revert --no-commit <commit>  //revert the changes without automatically creating a new commit
+$ git revert --mainline <parent-number> <commit>  // If a commit is the result of a merge, you can use the --mainline option to specify which parent's changes to revert. <parent-number> can be '1' for the first parent or '2' for the second parent
+$ git revert --continue //resolving conflicts during a revert or after modifying changes with --no-commit, use this command to continue the revert process and create the new revert commit.
+$ git revert --abort //If you decide to cancel the revert process and return to the state before starting the revert, use this command to abort the revert.
+
+--Git reset
+$ git reset -hard
+$ git reset -soft:
+$ git reset --mixed
 
