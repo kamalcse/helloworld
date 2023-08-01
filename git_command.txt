@@ -32,13 +32,24 @@ $ git commit -m " Commit Message"
 $ git commit -a 
 
 --Push
-$ git push origin [branch_name] 
+$ git push origin [branch_name] //sends the local commits from the specified <branch> to the <remote> repository
 $ git push --all   //pushes all the branches to the server repository
+$ git push --all <remote>
+git push --tags <remote>  //push all the tags (annotated and lightweight tags) from your local repository to the specified <remote>
+$ git push [-f | --force]  // forcefully push your local branch to the remote repository, even if it results in a non-fast-forward update. Use this with caution, as it can overwrite other developers' changes
+$ git push origin --delete <branch>  //Delete a remote branch by push command
+$ git push [--set-upstream | -u] <remote> <branch>  //set the upstream branch for the current local branch. It establishes a tracking relationship between the local and remote branches. After setting the upstream, you can simply use git push without specifying the remote and branch names
 
 -- Pull 
 $ git pull URL
-$ git pull origin <branch_name>  // to pull files from repository
+$ git pull --all  //fetch changes from all remote repositories and branches and then merge them into the respective local branches
+$ git pull --tags // fetch and merge all tags from the remote repository into your local repository.
+$ git pull <remote> <branch_name>  // to pull files from repository
+$ git pull origin <branch_name> 
 $ git pull origin  // if on the same branch then branch name not needed
+$ git pull --rebase  //This combines git fetch and git rebase
+$ git pull --no-commit  //prevents Git from automatically creating a new merge commit when pulling changes
+
 
 --Remote
 $ git remote  //To check the configuration of the remote server
